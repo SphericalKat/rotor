@@ -1,7 +1,8 @@
 mod commands;
+mod run;
 
 use anyhow::Ok;
-use commands::{Command, answer};
+use commands::{answer, Command};
 use teloxide::prelude::*;
 use tracing::info;
 
@@ -15,9 +16,11 @@ async fn main() -> anyhow::Result<()> {
     dotenv::dotenv().ok();
     info!("Loaded env variables");
 
+    // instantiate bot
     let bot = Bot::from_env();
     info!("Bot is ready.");
 
+    // start a command handler REPL
     Command::repl(bot, answer).await;
 
     info!("Shutdown complete.");

@@ -12,3 +12,7 @@ teloxide = { version = "0.12.2", features = ["macros"] }
 tokio = { version = "1.8", features = ["rt-multi-thread", "macros"] }
 anyhow = "1.0.70"
 dotenv = "0.15.0"
+reqwest = { version = "0.11.14", features = ["json"] }
+serde = { version = "1.0.152", features = ["derive"] }
+serde_json = "1.0.93"
+piston_rs = "0.4.3"
